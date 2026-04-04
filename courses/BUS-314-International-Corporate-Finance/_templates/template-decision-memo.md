@@ -1,11 +1,11 @@
-# [Memo Title]
+# [Executive Memo]
 
-**Created by:** [name]
-**Updated by:** [name]
-**Date Created:** [date]
-**Date Updated:** [date]
+**Created by:** [Kyson Murasaki]
+**Updated by:** [kysonsm@hawaii.edu]
+**Date Created:** [April 3, 2026]
+**Date Updated:** [April 3, 2026]
 **Version:** [0.0]
-**LLM Used:** [LLM] (optional — if an LLM was used)
+**LLM Used:** [Claude] (optional — if an LLM was used)
 
 ---
 
