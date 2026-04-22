@@ -1,11 +1,11 @@
-# [Spec Title] – Technical Specification
+# Stage 3 AAPL – Technical Specification
 
-**Created by:** [name]
-**Updated by:** [name]
-**Date Created:** [date]
-**Date Updated:** [date]
-**Version:** [0.0]
-**LLM Used:** [LLM] (optional — if an LLM was used)
+**Created by:** Kyson Murasaki
+**Updated by:** Kyson Murasaki
+**Date Created:** April 22, 2026
+**Date Updated:** April 22, 2026
+**Version:** 1.0
+**LLM Used:** Claude
 
 **Role:** Financial Analyst / FP&A Analyst
 **Audience:** CFO or Director of FP&A
@@ -19,7 +19,7 @@
 Briefly restate the company, time period, and analytical objective in professional terms.
 
 Example phrasing:
-> [Company Name] is a publicly traded [industry] company. This specification outlines the analytical framework for computing 25+ accounting and performance ratios from the company's FY[year] financial statements, enabling management to assess financial health, operational efficiency, leverage, and value creation.
+> Apple is a publicly traded technology company. This specification outlines the analytical framework for computing 25+ accounting and performance ratios from the company's FY 2025 financial statements, enabling management to assess financial health, operational efficiency, leverage, and value creation.
 
 Include:
 - Company name and industry
