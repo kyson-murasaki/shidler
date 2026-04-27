@@ -3,9 +3,9 @@
 **Created by:** Kyson Murasaki
 **Updated by:** Kyson Murasaki
 **Date Created:** April 22, 2026
-**Date Updated:** April 22, 2026
-**Version:** 1.0
-**LLM Used:** Claude
+**Date Updated:** April 26, 2026
+**Version:** 2.0
+**LLM Used:** None
 
 **Role:** Financial Analyst / FP&A Analyst
 **Audience:** CFO or Director of FP&A
@@ -16,91 +16,86 @@
 
 ## 1. Problem Statement
 
-Briefly restate the company, time period, and analytical objective in professional terms.
-
-Example phrasing:
-> Apple is a publicly traded technology company. This specification outlines the analytical framework for computing 25+ accounting and performance ratios from the company's FY 2025 financial statements, enabling management to assess financial health, operational efficiency, leverage, and value creation.
-
-Include:
-- Company name and industry
-- Fiscal year(s) under review
-- Objective (e.g., assess financial health, benchmark performance, identify areas for improvement)
-- Decision context (CFO briefing, board presentation, investor relations)
+Apple is a publicly traded technology company. This specification outlines the analytical framework for computing 25+ accounting and performance ratios from the company's FY 2025 and 2024 financial statements, enabling management to assess financial health, operational efficiency, leverage, and value creation. The decision context would be for a CFO briefing or presentation for the Director of FP&A.
 
 ---
 
 ## 2. Inputs (Known Variables)
 
-Create a clean, professional input table. This will become the foundation for your spreadsheet and future AI prompts. Group by source.
-
 ### Balance Sheet Items (Current Year and Prior Year)
 
-| Variable | Description | Named Range | Year | Example |
+| Variable | Description | Named Range | Year | Value |
 |----------|-------------|-------------|------|---------|
-| Cash & marketable securities | Liquid assets | `BAL_cash_marketable_securities_[year]` | Both | 2,577 |
-| Receivables | Accounts receivable | `BAL_receivables_[year]` | Both | 498 |
-| Inventories | Inventory balance | `BAL_inventories_[year]` | Both | 8,992 |
-| Total current assets | Sum of current assets | `BAL_assets_current_[year]` | Both | 12,902 |
-| Net tangible fixed assets | PP&E less depreciation | `BAL_fixed_assets_net_[year]` | Current | 28,519 |
-| Total assets | All assets | `BAL_assets_total_[year]` | Both | 42,779 |
-| Total current liabilities | Short-term obligations | `BAL_liabilities_current_[year]` | Current | 14,487 |
-| Long-term debt | Non-current borrowings | `BAL_debt_long_term_[year]` | Both | 11,338 |
-| Total liabilities | All liabilities | `BAL_liabilities_total_[year]` | Current | 30,946 |
-| Shareholders' equity | Book value of equity | `BAL_equity_shareholders_[year]` | Both | 11,833 |
+| Cash & marketable securities | Liquid assets | `BAL_cash_marketable_securities_2025` | 2025 | 53,454 |
+| Cash & marketable securities | Liquid assets | `BAL_cash_marketable_securities_2024` | 2024 | 65,171 |
+| Receivables | Accounts receivable | `BAL_receivables_2025` | 2025 | 33,625 |
+| Receivables | Accounts receivable | `BAL_receivables_2024` | 2024 | 33,410 |
+| Inventories | Inventory balance | `BAL_inventories_2025` | 2025 | 7,230 |
+| Inventories | Inventory balance | `BAL_inventories_2024` | 2024 | 7,286 |
+| Total current assets | Sum of current assets | `BAL_assets_current_2025` | 2025 | 137,852 |
+| Total current assets | Sum of current assets | `BAL_assets_current_2024` | 2024 | 152,987 |
+| Net tangible fixed assets | PP&E less depreciation | `BAL_fixed_assets_net_2025` | 2025 | 45,446 |
+| Total assets | All assets | `BAL_assets_total_2025` | 2025 | 370,722 |
+| Total assets | All assets | `BAL_assets_total_2024` | 2024 | 364,980 |
+| Total current liabilities | Short-term obligations | `BAL_liabilities_current_2025` | 2025 | 184,452 |
+| Long-term debt | Non-current borrowings | `BAL_debt_long_term_2025` | 2025 | 84,566 |
+| Long-term debt | Non-current borrowings | `BAL_debt_long_term_2024` | 2024 | 85,750 |
+| Total liabilities | All liabilities | `BAL_liabilities_total_2025` | 2025 | 316,201 |
+| Shareholders' equity | Book value of equity | `BAL_equity_shareholders_2025` | 2025 | 54,521 |
+| Shareholders' equity | Book value of equity | `BAL_equity_shareholders_2024` | 2024 | 56,950 |
 
 ### Income Statement Items
 
-| Variable | Description | Named Range | Example |
+| Variable | Description | Named Range | Value |
 |----------|-------------|-------------|---------|
-| Net sales | Total revenue | `INC_sales` | 78,112 |
-| Cost of goods sold | Direct costs | `INC_cost_goods_sold` | 54,864 |
-| SG&A expenses | Operating expenses | `INC_sga` | 16,233 |
-| Depreciation | Non-cash expense | `INC_depreciation` | 2,357 |
-| EBIT | Operating income | `INC_ebit` | 4,658 |
-| Other income | Non-operating income | `INC_other_income` | 21 |
-| Interest expense | Cost of debt | `INC_interest_expense` | 477 |
-| Taxes | Income tax expense | `INC_taxes` | 921 |
-| Net income | Bottom line | `INC_net` | 3,281 |
-| Dividends | Shareholder distributions | `INC_dividends` | 1,330 |
+| Net sales | Total revenue | `INC_sales` | 400,736 |
+| Cost of goods sold | Direct costs | `INC_cost_goods_sold` | 214,179 |
+| SG&A expenses | Operating expenses | `INC_sga` | 27,012 |
+| Depreciation | Non-cash expense | `INC_depreciation` | 11,861 |
+| EBIT | Operating income | `INC_ebit` | 147,684 |
+| Other income | Non-operating income | `INC_other_income` | 3,718 |
+| Interest expense | Cost of debt | `INC_interest_expense` | 3,614 |
+| Taxes | Income tax expense | `INC_taxes` | 29,984 |
+| Net income | Bottom line | `INC_net` | 117,804 |
+| Dividends | Shareholder distributions | `INC_dividends` | 16,430 |
 
 ### Cash Flow Statement Items
 
-| Variable | Description | Named Range | Example |
+| Variable | Description | Named Range | Value |
 |----------|-------------|-------------|---------|
-| Cash from operations | Operating cash flow | `CASH_operating` | 7,117 |
-| Cash from investments | Investing cash flow | `CASH_investments` | -2,944 |
+| Cash from operations | Operating cash flow | `CASH_operating` | 137,205 |
+| Cash from investments | Investing cash flow | `CASH_investments` | -4,077 |
 
 ### Market / Analyst Inputs
 
-| Variable | Description | Named Range | Example |
+| Variable | Description | Named Range | Value |
 |----------|-------------|-------------|---------|
-| Share price | Market price per share | `share_price` | 109.53 |
-| Shares outstanding | Total shares (millions) | `shares_outstanding` | 500 |
-| Cost of capital | WACC or required return | `cost_capital` | 7.6% |
-| Tax rate | Statutory or effective rate | `tax_rate` | 21% |
-
-> *Tip:* Keep labels short and standardized. These names will become Excel named ranges and AI prompt parameters.
+| Share price | Market price per share | `share_price` | 213.49 |
+| Shares outstanding | Total shares (millions) | `shares_outstanding` | 15,115 |
+| Cost of capital | WACC or required return | `cost_capital` | 9.0% |
+| Tax rate | Statutory or effective rate | `tax_rate` | 24.1% |
 
 ---
 
-## 3. Assumptions & Constraints
+## 3. Named Range Conventions
 
-State all conventions used. Clarity here ensures reproducibility.
+All named ranges are in the inputs section tables above.
 
-Example list:
+---
+
+## 4. Assumptions & Constraints
+
 - All figures reported in millions unless otherwise noted.
-- Tax rate assumed at statutory 21% (or effective rate from financial statements).
-- Cost of capital estimated at [X]% based on [method/assumption].
+- Tax rate assumed at 24.1%.
+- Cost of capital estimated at 9.0%.
 - Interest rates quoted on a simple annual basis.
-- Depreciation figure taken from [Income Statement / Cash Flow Statement].
+- Depreciation figure taken from Income Statement.
 - Start-of-year values use prior fiscal year's Balance Sheet.
 - No off-balance-sheet items or contingent liabilities included.
 
 ---
 
-## 4. Calculation Flow
-
-Describe the logic and sequencing of your analysis — as if briefing a junior analyst or AI model builder. Use named-range pseudocode.
+## 5. Calculation Flow
 
 ### Step 1: Derived Inputs
 1. Compute `market_capitalization` = `share_price` x `shares_outstanding`
@@ -137,59 +132,36 @@ Describe the logic and sequencing of your analysis — as if briefing a junior a
 
 ---
 
-## 5. Outputs
+## 6. Outputs
 
 | Output | Description | Format | Purpose |
 |--------|-------------|--------|---------|
 | Ratio summary table | All 25+ ratios organized by category | Table | Core analytical output |
 | Du Pont decomposition | ROA and ROE breakdown | Table | Identifies return drivers |
 | Formula documentation | Named-range formula for each ratio | Column | Auditability |
-| Executive summary | Key findings and recommendations | 1–2 paragraphs | Stage 5 input |
 
 ---
 
 ## 7. Model Review — What Worked & What to Improve
 
-Reflect candidly on your Stage 2 Excel model. This section is what makes a post-build spec more valuable than a pre-build plan.
-
 - **What worked well?** Which formulas, layouts, or named ranges operated as intended?
+
+The ROA (start-of-year) and ROA (average) were relatively close to each other (33.0% and 32.8% respectively). The Du Pont ROA (33.0%) matched my directly computed ROA (33.0%). The Du Pont ROE (219.5%) was somewhat similar to my directly computed ROE (206.9%). Lastly,  the current ratio was 0.7x (less than 1), and the NWC was -12.6% (negative), which matches up.
+
 - **What would you change?** Were there workarounds, naming inconsistencies, or layout issues worth fixing?
+
+There was a rounding difference between the actual share price (213.49) and the model (213). There were also inconsistencies in the cost of capital and tax rate in the model (ex: actual cost of capital was 9.0%, but model showed 0%; actual tax rate was 24.1%, but model showed 0%). In terms of formatting/layout issues, random cells had no fill color when they should have been filled, and the auto generated cell widths caused some words and numbers to be unreadable. Also, some of the named ranges had 2023 for the year for some reason, despite me originally asking Claude to use FY2025 and 2024 data. 
+
 - **What would make the model more auditable?** Consider formula documentation, color coding, or structural changes.
+
+Having borders around each cell, and also having alternating fill colors for every other row would make the model easier to read. Currently, it is just highlighted text on a white background.
+
 - **What additional analysis is worth including?** Industry comparisons, trend data, additional ratios?
 
-> *Tip:* Be honest and specific. "The Du Pont decomposition matched my direct ROA within 0.1%" is useful. "Everything worked fine" is not.
+I think including some analysis from other companies in the tech industry would help determine if Apple is doing well in comparison to those other companies.
 
 ---
 
 ## 8. Limitations & Next Steps
 
-Briefly note any analytical limits and outline your next step.
-
-Example phrasing:
-> This specification does not incorporate industry peer comparisons, multi-year trend analysis, or off-balance-sheet items. The next phase will involve writing a structured AI prompt and final analysis interpreting the ratio results for senior management.
-
----
-
-## Writing a Strong Specification
-
-**Your spec should:**
-- **Communicate like a professional:** clear, structured, and jargon-free.
-- **Think one stage ahead:** your spec should feed directly into your Stage 4 AI prompt and final analysis.
-- **Be internally consistent:** variables, labels, and steps must align with your actual model.
-- **Be reproducible:** a new analyst should be able to rebuild the model from your spec without your help.
-- **Be reflective:** the "Model Review" section should show honest assessment of what worked and what needs improvement.
-- **Be executive-relevant:** the CFO should understand *what you built* and *why it matters*.
-
----
-
-## How This Sets You Up for Stage 4
-
-| What You Write in Stage 3 | What It Enables in Stage 4 |
-|----------------------------|----------------------------|
-| Named ranges with precise definitions | AI uses standardized variable names, no improvisation |
-| Step-by-step calculation flow | AI generates correct, auditable formulas |
-| Model review and improvement notes | AI builds the *improved* version, not just a replica |
-| Explicit output requirements | AI produces the exact tables, charts, and sections you need |
-| "Outputs" section | Drives your interpretation and recommendation |
-
-> *By completing your spec after the build, you create a machine-readable blueprint that transforms your prototype into a polished, documented model — demonstrating the reflective documentation skills valued by finance teams and auditors alike.*
+This specification does not incorporate comparisons from other companies in the tech industry, as well as an analysis from previous years to show possible trends. The next phase will involve writing a structured AI prompt and final analysis interpreting the ratio results.
