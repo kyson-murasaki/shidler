@@ -1,10 +1,10 @@
-# Stage 4 – Final Analysis, Prompt Engineering & Recommendation (10 Points)
+# Stage 4 AAPL – Final Analysis, Prompt Engineering & Recommendation
 
 **Created by:** Kyson Murasaki
 **Updated by:** Kyson Murasaki
-**Date Created:** April 22, 2026
-**Date Updated:** April 26, 2026
-**Version:** 2.0
+**Date Created:** May 1, 2026
+**Date Updated:** May 1, 2026
+**Version:** 1.0
 **LLM Used:** None
 
 ---
@@ -19,18 +19,23 @@ This stage combines quantitative rigor, interpretation, communication, and AI fl
 
 ---
 
-## Deliverable Requirements (2–4 page `.md` file uploaded to GitHub)
-
-Must include:
-
----
-
 ### A. Company & Data Summary
 
 Brief restatement:
 - Company name, industry, and fiscal year analyzed
 - Data sources used (10-K, Yahoo Finance, etc.)
 - Any key assumptions (tax rate, cost of capital)
+
+Apple (AAPL) is a company in the technology industry, and is being analyzed for FY 2025. This analysis will draw from Apple's Consolidated Balance Sheet, Income Statement, and Cash Flow Statement as reported in the FY 2025 10-K filing.
+
+Assumptions from Stage 3 spec...
+- All figures reported in millions unless otherwise noted.
+- Tax rate assumed at 24.1%.
+- Cost of capital estimated at 9.0%.
+- Interest rates quoted on a simple annual basis.
+- Depreciation figure taken from Income Statement.
+- Start-of-year values use prior fiscal year's Balance Sheet.
+- No off-balance-sheet items or contingent liabilities included.
 
 ---
 
@@ -167,42 +172,3 @@ The prompt itself is the primary deliverable — it demonstrates your ability to
 | Structured AI Prompt | Clear, complete, reproducible prompt with all financial data | 2 |
 | Professionalism & Communication | Executive-ready, well-structured deliverable | 1 |
 | AI-Generated Output OR Manual Analysis | Working spreadsheet from prompt, or equivalent manual work | 2 |
-
----
-
-## Career Relevance
-
-This project builds skills used in:
-
-### Financial Planning & Analysis (FP&A)
-- Ratio trend analysis for management reporting
-- Performance benchmarking across business units
-- Budget variance analysis and forecasting
-
-### Corporate Finance & Treasury
-- Capital structure optimization
-- Liquidity management and working capital analysis
-- Investor relations and equity story development
-
-### Accounting & Audit
-- Financial statement analysis for audit risk assessment
-- Ratio-based analytical procedures
-- Internal controls evaluation
-
-### Investment Banking & Equity Research
-- Comparable company analysis (comps)
-- Credit analysis and debt capacity assessment
-- Valuation multiples and market-to-book analysis
-
-### Data, Analytics & AI Roles
-- Spec-to-model-to-prompt automation pipeline
-- GitHub collaboration and version control
-- AI-assisted financial modeling and reporting
-
----
-
-## Why This Matters
-
-This multi-stage journey reflects workflows used at Big 4 accounting firms, corporate FP&A teams, investment banks, and consulting firms. You are demonstrating analytical reasoning, automation fluency, model governance, financial decision leadership, and technical communication.
-
-**This is a portfolio-ready artifact for internships, jobs, and graduate programs.**
